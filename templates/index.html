@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск заказа</title>
+</head>
+<body>
+    <h1>Поиск заказа</h1>
+    
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    
+    <form method="post">
+        <label for="order_number">Номер заказа:</label>
+        <input type="text" name="order_number" id="order_number" required>
+        <button type="submit">Найти</button>
+    </form>
+    
+    {% if order_number %}
+    <h2>Информация о заказе {{ order_number }}:</h2>
+    <p>Владелец заказа: {{ owner }}</p>
+    {% endif %}
+</body>
+</html>
